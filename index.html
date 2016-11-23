@@ -3,11 +3,62 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/index.css" />
 	</head>
 	<body>
-				<div>this is a demo PPAP</div>
-	</body>
-	<script>
+		<div id="wu"></div>
+		<!--主页-->
+		<header>
+			<div>
+				<p>主页</p>
+				<p>自我介绍</p>
+				<p>专业技能</p>
+				<p>项目经验</p>
+				<p>联系方式</p>
+			</div>	
+			<div>
+				<h2>臧若翔</h2>
+				<p>hello world</p>
+				<img alt="" title="" src="img/world.jpg">
+			</div>
+		</header>
+		<!--介绍-->
+		<div id="about">
+			<div>
+				关于我
+			</div>
+			<p>1</p>
+			<p>2</p>
+			<p>3</p>
+			<p>4</p>
+		</div>
+		<!--技能-->
+		<div id="skills">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+			</ul>
+		</div>
+		<!--项目-->
+		<footer>
+			
+		</footer>
+		
+		
 
-	</script>
+		<script type="text/javascript">
+			document.documentElement.style.fontSize=document.documentElement.clientWidth/6.4+'px';
+			//通过resize事件监听当前窗口大小变化
+			window.addEventListener("resize",function(){
+				document.documentElement.style.fontSize=document.documentElement.clientWidth/6.4+'px';
+			});
+		</script>
+	</body>
 </html>
