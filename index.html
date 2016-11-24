@@ -1,64 +1,310 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link rel="stylesheet" href="css/index.css" />
-	</head>
-	<body>
-		<div id="wu"></div>
-		<!--主页-->
-		<header>
-			<div>
-				<p>主页</p>
-				<p>自我介绍</p>
-				<p>专业技能</p>
-				<p>项目经验</p>
-				<p>联系方式</p>
-			</div>	
-			<div>
-				<h2>臧若翔</h2>
-				<p>hello world</p>
-				<img alt="" title="" src="img/world.jpg">
-			</div>
-		</header>
-		<!--介绍-->
-		<div id="about">
-			<div>
-				关于我
-			</div>
-			<p>1</p>
-			<p>2</p>
-			<p>3</p>
-			<p>4</p>
-		</div>
-		<!--技能-->
-		<div id="skills">
-			<ul>
-				<li>1</li>
-				<li>2</li>
-				<li>3</li>
-				<li>4</li>
-				<li>5</li>
-				<li>6</li>
-				<li>7</li>
-				<li>8</li>
-			</ul>
-		</div>
-		<!--项目-->
-		<footer>
-			
-		</footer>
-		
-		
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="keywords" content="前端,皇甫少鲲,简历" />
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+  <link rel="stylesheet" href="css/animate.css"/>
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
 
-		<script type="text/javascript">
-			document.documentElement.style.fontSize=document.documentElement.clientWidth/6.4+'px';
-			//通过resize事件监听当前窗口大小变化
-			window.addEventListener("resize",function(){
-				document.documentElement.style.fontSize=document.documentElement.clientWidth/6.4+'px';
-			});
-		</script>
-	</body>
+<link href="css/owl.carousel.css" rel="stylesheet" media="screen">
+<link href="css/owl.theme.css" rel="stylesheet" media="screen">
+
+<!-- Stylesheet
+    ================================================== -->
+<link rel="stylesheet" type="text/css"  href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!-- Header -->
+<header class="intro">
+  <div class="intro-body">
+    <div class="container">
+      <div class="row">
+        <div class="intro-text">
+          <h1>Welcome</h1>
+          <p>I am zangruoxiang，A Front-End Web Developer</p>
+          <a href="#about" class="btn btn-default btn-lg page-scroll">关于</a> <a href="#portfolio" class="btn btn-default btn-lg page-scroll">我的作品</a></div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Navigation -->
+<div id="nav">
+  <nav class="navbar navbar-custom">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
+        <a class="navbar-brand page-scroll" href="#page-top">臧若翔</a> </div>
+
+      <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+        <ul class="nav navbar-nav">
+          <li class="hidden"> <a href="#page-top"></a> </li>
+          <li> <a class="page-scroll" href="#about">关于</a> </li>
+          <li> <a class="page-scroll" href="#portfolio">作品</a> </li>
+          <li> <a class="page-scroll" href="#skills">技能</a> </li>
+          <li> <a class="page-scroll" href="#resume">工作经历</a> </li>
+          <li> <a class="page-scroll" href="#contact">联系我</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- About Section -->
+<div id="about">
+  <div class="container">
+    <div class="section-title text-center center">
+      <h2>About me</h2>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center"><div class="tx"></div></div>
+      <div class="col-md-8 col-md-offset-2">
+        <div class="about-text">
+          <p id="one">籍贯：黑龙江；年龄：22岁；
+          <p id="two">生命的价值在于不断地学习和创造</p>
+          <p id="thr">我是臧若翔，一名web前端工程师</p>
+          <p id="fou">13903696975@163.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Portfolio Section -->
+<div id="portfolio">
+  <div class="container">
+    <div class="section-title text-center center">
+      <h2>My Portfolio</h2>
+      <hr>
+      <div class="clearfix"></div>
+    </div>
+    <div class="categories">
+      <ul class="cat">
+        <li>
+          <ol class="type">
+            <li><a href="#" data-filter="*" class="active">All</a></li>
+            <li><a href="#" data-filter=".web">Web Development</a></li>
+            <li><a href="#" data-filter=".app">App Development</a></li>
+          </ol>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="row">
+      <div class="portfolio-items">
+        <div class="col-sm-6 col-md-3 col-lg-3 web">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/01.png" title="达令网是一家电商网站，努力实现为国人提供最好的海外产品的目标。<br/>
+            我在这个项目中主要负责屏幕适配，js交互，animate.css动画的实现以及css3动画的实现。</br>
+            本项目中主要用到的技术是：用js、jQ实现交互；使用了html5与css3的新技术；使用animate.css实现动画效果。<br/>
+            地址：<a href='http://www.daling.com/' style='color:red;text-decoration:none;'target='_blank'>点我</a>" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>达令网</h4>
+                <small>Web Development</small>
+                <div class="clearfix"></div>
+                <i class="fa fa-search"></i> </div>
+              <img src="img/portfolio/01.png" class="img-responsive" alt="达令，一手全球好货，一家用心帮你海淘的网站。"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 app">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/02.png" title="银泰网是国内实体百货公司控股经营的网上商务平台，由香港上市公司银泰百货重资打造，整合旗下40余家实体商城，数千个品牌，提供了众多高品质的商品，是国内消费者的首选时尚B2C网站。<br/>
+            我在这个项目中主要负责主页页面布局，js交互。</br>
+            本项目中主要用到的技术是：使用用js、zepto实现交互；使用了弹盒布局；使用animate.css实现动画效果。<br/>
+            地址：<a href='http://www.yintai.com/' style='color:red;text-decoration:none;'target='_blank'>点我</a>" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>银泰网</h4>
+                <small>WebApp</small>
+                <div class="clearfix"></div>
+                <i class="fa fa-search"></i> </div>
+              <img src="img/portfolio/02.png" class="img-responsive" alt="银泰网-让你买的放心"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-3 web">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/04.png" title="本网站是一款以成为国内团队及个人用户首选定制商品平台为定位的PC端服饰定制电商
+            网站。分为注册、登录、购物车等界面的实现，是一个为广大客户提供一对一定制设计服务的平台。<br/>
+            项目为团队项目，我主要负责前端页面布局、js实现部分动画、各个浏览器兼容问题解决。</br>
+            本项目中主要用到的技术是：div+css布局；使用js、jQ实现交互；使用正则进行表单验证。<br/>
+            地址：<a href='http://www.iuyoung.com/' style='color:red;text-decoration:none;'target='_blank'>点我</a>" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>有样儿</h4>
+                <small>Web Development</small>
+                <div class="clearfix"></div>
+                <i class="fa fa-search"></i> </div>
+              <img src="img/portfolio/04.png" class="img-responsive" alt="有样儿是国内首家专注互联网定制的时尚产品电子商务平台"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 app">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/05.png" title="2048是一款很经典的手机游戏。<br/>主要用到了mui，zepto等技术<br/>地址：<a href='2048/game.html' style='color:red;text-decoration:none;'>点我</a>" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>2048</h4>
+                <small>Hybird App</small>
+                <div class="clearfix"></div>
+                <i class="fa fa-search"></i> </div>
+              <img src="img/portfolio/05.png" class="img-responsive" alt="混合App 2048小游戏"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 app">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/08.png" title="微场景<br/>主要应用了弹性盒技术并用animate.css实现动画效果。<br/>
+            地址:<a href='weixin/index.html' style='color:red; text-decorantion:none;'>点我</a>" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>微场景</h4>
+                <small>Wei Xin</small>
+                <div class="clearfix"></div>
+                <i class="fa fa-search"></i> </div>
+              <img src="img/portfolio/08.png" class="img-responsive" alt="微场景"> </a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Skills Section -->
+<div id="skills" class="text-center">
+  <div class="container">
+    <div class="section-title center">
+      <h2>My Skills</h2>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6 skill"> <span class="chart" data-percent="80"> <span class="percent">95</span> </span>
+        <h4>HTML5</h4>
+      </div>
+      <div class="col-md-4 col-sm-6 skill"> <span class="chart" data-percent="85"> <span class="percent">85</span> </span>
+        <h4>CSS3</h4>
+      </div>
+      <div class="col-md-4 col-sm-6 skill"> <span class="chart" data-percent="80"> <span class="percent">80</span> </span>
+        <h4>jQuery</h4>
+      </div>
+      <div class="col-md-4 col-sm-6 skill"> <span class="chart" data-percent="70"> <span class="percent">70</span> </span>
+        <h4>reactjs</h4>
+      </div>
+      <div class="col-md-4 col-sm-6 skill"> <span class="chart" data-percent="60"> <span class="percent">70</span> </span>
+        <h4>Angular</h4>
+      </div>
+      <div class="col-md-4 col-sm-6 skill"> <span class="chart" data-percent="70"> <span class="percent">70</span> </span>
+        <h4>JavaScript</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Resume Section -->
+<!--<div id="resume" class="text-center">
+  <div class="container">
+    <div class="section-title center">
+      <h2>Experience</h2>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="timeline">
+          <li>
+            <div class="timeline-image">
+              <h4>Aug 2015 <br>
+                - <br>
+                Present </h4>
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>XXX公司</h4>
+                <h4 class="subheading">Front Developer</h4>
+              </div>
+              <div class="timeline-body">
+                <p>从事前端工作</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-image">
+              <h4>may 2014 <br>
+                - <br>
+                Jun 2015 </h4>
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>XXX公司</h4>
+                <h4 class="subheading">Front Developer</h4>
+              </div>
+              <div class="timeline-body">
+              	<p>从事前端工作</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-image">
+              <h4>Dec 2013 <br>
+                - <br>
+                jun 2014 </h4>
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>XXX公司</h4>
+                <h4 class="subheading">Front Developer</h4>
+              </div>
+              <div class="timeline-body">
+                <p>从事前端工作</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>-->
+<!-- Contact Section -->
+<div id="contact" class="text-center">
+  <div class="container">
+    <div class="section-title center">
+      <h2>Contact me</h2>
+      <hr>
+      <p id="fiv">前端更加贴近用户，能将我的技术和我所做的努力直接呈现在用户面前，这种体验非常美妙。这也正是我热爱前端的原因。</p>
+      <p id="six">行路有良友，便是捷径</p>
+      <p id="sev">带上我吧，让我们一起看到更大的世界</p>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <div id="eig" class="col-md-4"> <i class="fa fa-map-marker fa-2x"></i>
+        <p id="ele">北京市昌平区<br>
+        </p>
+      </div>
+      <div id="nin" class="col-md-4"> <i class="fa fa-envelope-o fa-2x"></i>
+        <p id="twe">13903696975@163.com</p>
+      </div>
+      <div id="ten" class="col-md-4"> <i class="fa fa-phone fa-2x"></i>
+        <p id="thir">15010507059</p>
+      </div>
+      <hr>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
+<script type="text/javascript" src="js/bootstrap.js"></script> 
+<script type="text/javascript" src="js/SmoothScroll.js"></script> 
+<script type="text/javascript" src="js/easypiechart.js"></script> 
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script> 
+<script type="text/javascript" src="js/jquery.isotope.js"></script> 
+<script type="text/javascript" src="js/jquery.counterup.js"></script> 
+<script type="text/javascript" src="js/waypoints.js"></script> 
+<script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
+<script type="text/javascript" src="js/contact_me.js"></script> 
+<script type="text/javascript" src="js/owl.carousel.js"></script> 
+<script type="text/javascript" src="js/main.js"></script>
+<script src="js/animate.js"></script>
+</body>
 </html>

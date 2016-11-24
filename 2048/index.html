@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+//    	mui.init();
+    </script>
+</head>
+<style>
+	body{height: 100vh;background: #249EC5;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-box-pack: center;-webkit-justify-content: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-webkit-align-items: center;-ms-flex-align: center;align-items: center;}
+	.box{}
+	.box h3{color: #fff;}
+	.box button{width: 100%;margin-top: 10vh;}
+</style>
+<body>
+	<div class="box">
+		<h3>2048小游戏</h3>
+		<button class="play">开始游戏</button>
+	</div>
+</body>
+<script type="text/javascript">
+	//改变状态栏为首页的主色
+	mui.init({
+		statusBarBackground:"#249EC5"
+	})
+	mui.plusReady(function(){
+		//阻止横屏，只能竖屏
+		plus.screen.lockOrientation("portrait-primary");
+		
+		//开始游戏按钮点击后打开游戏的界面
+		document.querySelector(".play").addEventListener("tap",function(){
+			mui.openWindow({
+				url:"game.html",
+				id:"game.html",
+				styles:{
+					top:"0px",
+					bottom:"0px"
+				}
+			})
+		})
+	})
+	//绑定一个事件，这个事件等游戏界面返回的时候触发，为了改变状态栏的颜色
+	window.addEventListener("changeBar",function(){
+		plus.navigator.setStatusBarBackground("#249EC5");
+	})
+</script>
+</html>

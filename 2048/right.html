@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style>
+		body{background: #2369B6;}
+		.logoBox{width: 60vw;height: 60vw;border-radius: 50%;overflow: hidden;margin: 10vh auto;}
+		.logoBox img{width: 100%;}
+		button{display: block;width: 80vw;margin: 10px auto; }
+	</style>
+	<body>
+		<div class="logoBox"><img src="img/logo.jpg"/></div>
+		<button id="phBtn">排行榜</button>
+		<button id="gyBtn">关于</button>
+		<button id="backBtn">返回游戏</button>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function(){
+//				获取到游戏界面
+				var game=plus.webview.getWebviewById("game.html");
+//				创建排行界面并隐藏
+				var ph=plus.webview.create("paihang.html","paihang.html",{top:"0px",bottom:"0px",width:"50%"})
+				ph.hide();
+//				创建关于界面并隐藏
+				var gy=plus.webview.create("guanyu.html","guanyu.html",{top:"0px",bottom:"0px",width:"50%"})
+				gy.hide();
+				
+//				点击排行按钮  把关于关掉,把排行显示出来
+				document.querySelector("#phBtn").addEventListener("tap",function(){
+					gy.hide("slide-out-left",300);
+					ph.show("slide-in-left",300);
+					
+				})
+//				点击关于按钮  把排行关掉,把关于显示出来
+				document.querySelector("#gyBtn").addEventListener("tap",function(){
+					ph.hide("slide-out-left",300);
+					gy.show("slide-in-left",300);
+					
+				})
+//				点击返回游戏的话,把排行和关于都关掉,触发游戏界面的关闭侧滑界面的事件
+				document.querySelector("#backBtn").addEventListener("tap",function(){
+					gy.hide("slide-out-left",200);
+					ph.hide("slide-out-left",200);
+					mui.fire(game,"menu:close");
+				})
+			})
+		</script>
+	</body>
+
+</html>

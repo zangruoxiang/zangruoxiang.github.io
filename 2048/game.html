@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style type="text/css">
+		body{background: #2369B6;position: relative;}
+		.mui-bar{background: none;}
+		.mui-bar-nav {
+		    -webkit-box-shadow:none;
+		    box-shadow:none;
+		}
+		header a{color: #fff;}
+		#conBox{height: 100vh;display: flex;justify-content: center;align-items: center;}
+		/*.gameBox{border: 1px solid red;}*/
+		.gameCon{width: 80vw;height: 80vw;border-radius: 10px;background: #BBADA0;}
+		.gameBox footer{margin-top: 20px;}
+		.gameCon{position: relative;}
+		.gameCon div[class^="br"]{
+			width: 17.5vw;
+			height: 17.5vw;
+			background: #CCC0B4;
+			border-radius: 8px;
+			float: left;
+			margin-top: 2vw;
+			margin-left: 2vw;
+		}
+		.gameCon div[class^="gr"]{
+			position: absolute;
+			width: 17.5vw;
+			height: 17.5vw;
+			border-radius: 8px;
+			text-align: center;
+			line-height: 17.5vw;
+			color: #f60;
+			
+			
+		}
+		.gameBox div[class^="gr1"]{
+			top: 2vw;
+		}
+		.gameBox div[class^="gr2"]{
+			top: 21.5vw;
+		}
+		.gameBox div[class^="gr3"]{
+			top: 41vw;
+		}
+		.gameBox div[class^="gr4"]{
+			top: 60.5vw;
+		}
+		.gameBox div[class$="1"]{
+			left: 2vw;
+		}
+		.gameBox div[class$="2"]{
+			left: 21.5vw;
+		}
+		.gameBox div[class$="3"]{
+			left: 41vw;
+		}
+		.gameBox div[class$="4"]{
+			left: 60.5vw;
+		}
+		.gameBox div[data-num='0']{background: none;}
+		.gameBox div[data-num='2']{background: #EEE4DA;}
+		.gameBox div[data-num='4']{background: #EDDBC1;}
+		.gameBox div[data-num='8']{background: #EABF86;}
+		.gameBox div[data-num='16']{background: #F5B45D;}
+		.gameBox div[data-num='32']{background: #FAC12C;}
+		.gameBox div[data-num='64']{background: #AFF73B;}
+		.gameBox div[data-num='128']{background: #8BD612;}
+		.gameBox div[data-num='256']{background: #71B208;}
+		.gameBox div[data-num='512']{background: #F7A246;}
+		.gameBox div[data-num='1024']{background: #E5861F;}
+		.gameBox div[data-num='2048']{background: #ED290F;}
+		
+		.alertBox{position: absolute;top: 0;left: 0;right: 0;bottom: 0;margin: auto;width: 70vw;height: 50vw;border: 1px solid red;background: #f60;border-radius: 10px;display: flex;flex-flow: column nowrap;justify-content: space-around;display: none;}
+		.alertBox h3{text-align: center;color: #FFFFFF;}
+		.alertBox button{width: 60%;margin: 0 auto;display: block;}
+		.alertBox.show{display: flex;}
+	</style>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <a class="rightBtn mui-icon mui-icon-bars mui-pull-right"></a>
+		</header>
+		<section id="conBox">
+			<article class="gameBox">
+				<div class="gameCon">
+					<div class="br"></div>
+					<div class="br"></div>
+					<div class="br"></div>
+					<div class="br"></div>
+					<div class="br"></div>
+					<div class="br"></div>
+					<div class="br"></div>
+					<div class="br"></div>
+					<div class="br"></div>
+					<div class="br"></div>
+					<div class="br"></div>
+					<div class="br"></div>
+					<div class="br"></div>
+					<div class="br"></div>
+					<div class="br"></div>
+					<div class="br"></div>
+					
+					<div class="gr11"></div>
+					<div class="gr12"></div>
+					<div class="gr13"></div>
+					<div class="gr14"></div>
+					<div class="gr21"></div>
+					<div class="gr22"></div>
+					<div class="gr23"></div>
+					<div class="gr24"></div>
+					<div class="gr31"></div>
+					<div class="gr32"></div>
+					<div class="gr33"></div>
+					<div class="gr34"></div>
+					<div class="gr41"></div>
+					<div class="gr42"></div>
+					<div class="gr43"></div>
+					<div class="gr44"></div>
+					
+				</div>
+				<footer>
+					<button class="mui-pull-left">score:<span id="score">0</span></button>
+					<button class="mui-pull-right">best:<span id="best">0</span></button>
+				</footer>
+			</article>
+		</section>
+		<div class="alertBox">
+			<h3>Game over!</h3>
+			<button class="again">重新开始</button>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				//改变状态栏的颜色为游戏界面的主色
+				statusBarBackground:"#2369B6",
+				//在窗口返回触发前去触发主界面的一个事件，为了改变状态栏的颜色
+				beforeback:function(){
+//					获取主窗口
+					var index=plus.webview.getLaunchWebview();
+//					触发主窗口的改变状态栏的事件
+					mui.fire(index,"changeBar");
+//					如果不返回true 窗口不能返回
+					return true;
+				}
+			})
+		</script>
+		<script type="text/javascript">
+			var menu = null,//存放侧滑界面的变量
+				main = null;//存放游戏界面的变量
+			var showMenu = false;
+			mui.plusReady(function() {
+				//仅支持竖屏显示
+				plus.screen.lockOrientation("portrait-primary");
+				main = plus.webview.currentWebview();
+//				给游戏界面添加遮罩点击,点击的时候关闭侧滑界面
+				main.addEventListener('maskClick', closeMenu);
+				//处理侧滑导航，为了避免和子页面初始化等竞争资源，延迟加载侧滑页面；
+				setTimeout(function() {
+//					预加载侧滑界面,为了打开的时候比较顺畅
+					menu = mui.preload({
+						id: 'right.html',
+						url: 'right.html',
+						styles: {
+							right: 0,
+							width: '50%'
+						},
+						show: {
+							aniShow: 'none'
+						}
+					});
+				}, 200);
+			});
+//			为了在滑动过程不要瞎点
+			var isInTransition = false;
+			/**
+			 * 显示侧滑菜单
+			 */
+			function openMenu() {
+				if (isInTransition) {
+					return;
+				}
+				if (!showMenu) {
+					//侧滑菜单处于隐藏状态，则立即显示出来；
+					isInTransition = true;
+//					给侧滑界面添加遮罩,为了防止侧滑界面还没有完全出来的时候就被瞎点了
+					menu.setStyle({
+						mask: 'rgba(0,0,0,0)'
+					}); //menu设置透明遮罩防止点击
+//					游戏界面向左滑动，同时加一个透明的遮罩，为了点击遮罩关闭侧滑界面
+					main.setStyle({
+							mask: 'rgba(0,0,0,0)',
+							left: '-50%',
+							transition: {
+								duration: 150
+							}
+					});
+					//侧滑界面也要从右边滑出，完全滑出之后去掉遮罩让它能点
+					menu.show('slide-in-right', 150, function() {
+						//主窗体开始侧滑并显示遮罩
+						mui.later(function() {
+							isInTransition = false;
+							menu.setStyle({
+								mask: "none"
+							}); //移除menu的mask
+						}, 160);
+						showMenu = true;
+					});
+				}
+			};
+			/**
+			 * 关闭菜单
+			 */
+			function closeMenu() {
+				if (isInTransition) {
+					return;
+				}
+				if (showMenu) {
+					//关闭遮罩；
+					//主窗体开始侧滑；
+					isInTransition = true;
+					
+					main.setStyle({
+						mask: 'none',
+						left: '0',
+						transition: {
+							duration: 200
+						}
+					});
+					showMenu = false;
+					//等动画结束后，隐藏菜单webview，节省资源；
+//					mui.later(function() {
+						isInTransition = false;
+						menu.hide("slide-out-right",200);
+//					}, 300);
+				}
+			};
+			//点击左上角更多图标，打开侧滑菜单；
+			document.querySelector('.rightBtn').addEventListener('tap', function(e) {
+				if (showMenu) {
+					closeMenu();
+				} else {
+					openMenu();
+				}
+			});
+
+			//主界面向右滑动，若菜单未显示，则显示菜单；否则不做任何操作
+//			window.addEventListener("swiperight", openMenu);
+			//主界面向左滑动，若菜单已显示，则关闭菜单；否则，不做任何操作；
+//			window.addEventListener("swipeleft", closeMenu);
+			//侧滑菜单触发关闭菜单命令 
+			//为了让侧滑界面的返回游戏按钮去触发
+			window.addEventListener("menu:close", closeMenu);
+//			window.addEventListener("menu:open", openMenu);
+			//重写mui.menu方法，Android版本menu按键按下可自动打开、关闭侧滑菜单；
+			mui.menu = function() {
+					if (showMenu) {
+						closeMenu();
+					} else {
+						openMenu();
+					}
+				}
+			
+			//首页返回键处理
+			//1、若侧滑菜单显示，则关闭侧滑菜单
+			//2、否则，执行mui框架默认的关闭首页功能
+			var _back = mui.back;
+			mui.back = function() {
+				if (showMenu) {
+					closeMenu();
+				} else {
+					_back();
+				}
+			};
+		</script>
+		<script src="js/zepto_1.1.3.js" type="text/javascript"></script>
+		<script src="game.js"></script>
+	</body>
+
+</html>
